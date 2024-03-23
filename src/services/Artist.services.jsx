@@ -11,7 +11,7 @@ export const getArtistByCountry = async () => {
     console.log(response)
 
     data.artist = response? response.message.body.artist_list : [];
-
+    console.log(data)
     return data
 }
 
