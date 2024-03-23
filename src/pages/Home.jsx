@@ -1,6 +1,7 @@
 import useToken from "../hooks/useToken";
 import { getArtistByGenre } from "../services/Artist.services";
 import { useQuery } from "@tanstack/react-query";
+import Artists from "../components/Artists"
 
 export default function Home() {
     const token = useToken((state) => state.token)
@@ -14,8 +15,9 @@ export default function Home() {
     
     return (
         <>
-            <h1>Soy una página de Home</h1>
-            <ul>{data.map(e => <li key={e.id}>{e.name}</li>)}</ul>
+            <h1>My fucking Artists</h1>
+            <Artists artists={data}/>
+            
         </>
     );
 }
