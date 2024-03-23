@@ -1,12 +1,21 @@
-import { useLoaderData } from "react-router-dom"
+import useToken from "../hooks/useToken";
+import { getArtistByGenre } from "../services/Artist.services";
+import { useQuery } from "@tanstack/react-query";
 
-export default function Home () {
-    const data = useLoaderData()
-    console.log(data.artist)
+export default function Home() {
+    const token = useToken((state) => state.token)
+    const {data, isLoading} = useQuery({
+        queryKey: ["artist", token],
+        queryFn: () => getArtistByGenre(token)
+    });
+
+    if (isLoading) return "Loading..."
+
+    
     return (
         <>
-        <h1>Soy una página de Home</h1>
-        {data.artist.map(e => <h1 key={e.artist.artist_id}>{e.artist.artist_name}</h1>)}
+            <h1>Soy una página de Home</h1>
+            {data.map(e => <h2 key={e.id}>{e.name}</h2>)}
         </>
-    )
+    );
 }

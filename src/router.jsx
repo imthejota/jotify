@@ -4,14 +4,14 @@ import Home from "./pages/Home";
 import Artist from "./pages/Artist";
 import Album from "./pages/Album";
 import Track from "./pages/Track";
-import { getArtistByCountry } from "./services/Artist.services";
+
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Layout />,
         children: [
-            { index: true, loader: getArtistByCountry, element: <Home /> },
+            { index: true, element: <Home /> },
             {
                 path: "artist/:id",
                 element: <Artist />,
