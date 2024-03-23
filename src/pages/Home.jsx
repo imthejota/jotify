@@ -15,7 +15,7 @@ export default function Home() {
     return (
         <>
             <h1>Soy una página de Home</h1>
-            {data.map(e => <h2 key={e.id}>{e.name}</h2>)}
+            <ul>{data.map(e => <li key={e.id}>{e.name}</li>)}</ul>
         </>
     );
 }

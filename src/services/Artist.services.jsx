@@ -6,7 +6,7 @@ export const getArtistByGenre = async (
     const query = new URLSearchParams({
         q: `genre: ${genre}`,
         type: "artist",
-        market: "AR",
+        locale: "es-ES",
         limit: 50,
         offset: page * 50,
         include_external: "audio",
