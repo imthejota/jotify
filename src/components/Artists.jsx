@@ -4,11 +4,10 @@ export default function Artists ({artists}) {
 
     return (
     
-    <ul>{artists.map(e => <Artist key={e.id} />)}</ul>
+    <>{artists.map(e => <Artist key={e.id} name={e.name} id={e.id} images={e.images} />)}</>
 
     )
 
 }
 
 
-// un componente para mostrar cada artista, modularizar la funcion

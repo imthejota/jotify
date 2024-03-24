@@ -1,9 +1,14 @@
 
 
-export default function Artist ({name, id}) {
+export default function Artist ({name, id, images}) {
+    const image = images.map(e => e.url)
 
     return (
-        <li></li>
+        <>
+            <img src={image[0]} alt="Image" width="300" />
+            <h3>Name: {name}</h3>
+            <h4>Id: {id}</h4>
+        </>
     )
 
 }
