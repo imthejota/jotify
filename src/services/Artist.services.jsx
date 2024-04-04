@@ -7,8 +7,8 @@ export const getArtistByGenre = async (
         q: `genre: ${genre}`,
         type: "artist",
         locale: "es-ES",
-        limit: 50,
-        offset: page * 50,
+        limit: 10,
+        offset: page * 10,
         include_external: "audio",
     });
     const endpoint = `${
